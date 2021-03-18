@@ -18,7 +18,7 @@ export const ActiveItem = React.createContext(null);
 
 const Product = ({ product, onAddToCart }) => {
   const classes = useStyles();
-
+const titleTrunc = product.name.split(' ');
   // const handleClick=(event)=> setActiveItem(product) &&console.log(event);
   const handleAddToCart = () => onAddToCart(product.id, 1);
   const { open, openModal, closeModal } = useModal();
@@ -33,16 +33,16 @@ const Product = ({ product, onAddToCart }) => {
       <CardContent>
         <div className={classes.cardContent}>
           <Typography gutterBottom variant="h5" component="h2">
-            {product.name}
+            {titleTrunc.slice(0,6).join(' ')+`...`}
           </Typography>
           <Typography gutterBottom variant="h5" component="h2">
             ${product.price.formatted}
           </Typography>
         </div>
-        <Typography variant="body2" color="textSecondary" component="p" />
-      </CardContent>
+        <Typography variant="body2" color="textSecondary" component="p"></Typography>
 
-      <CardActions disableSpacing className={classes.cardActions}>
+
+      <CardActions  className={classes.cardActions}>
         <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
           <AddShoppingCart />
         </IconButton>
@@ -53,7 +53,7 @@ const Product = ({ product, onAddToCart }) => {
         {open ? (
           <Modal
             render={() => (
-              <Card className={classes.root}>
+              <Card className={classes.rootExpand}>
                 <CardContent>
                   <CardMedia
                     className={classes.mediaExpand}
@@ -89,6 +89,7 @@ const Product = ({ product, onAddToCart }) => {
           />
         ) : null}
       </CardActions>
+      </CardContent>
     </Card>
   );
 };

@@ -23,14 +23,14 @@ const Remodal = ({ children, close, render }) => {
           <div
             style={{
               position: "relative",
-              background: "white",
+
               borderRadius: "2px",
               padding: "15px",
               minWidth: "320px",
               maxWidth: "600px",
-              maxHeight: "600px",
+              maxHeight: "550px",
               zIndex: 10,
-              boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.3)",
+              
               marginBottom: "100px",
             }}
           >

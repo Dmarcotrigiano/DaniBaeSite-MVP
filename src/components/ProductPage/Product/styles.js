@@ -5,7 +5,12 @@ export default makeStyles((theme) => ({
   root: {
     // maxWidth: 345, original width style
     maxWidth: "100%",
-    height: "fit-content",
+    minHeight: "100%",
+    justifyContent: "flex-end",
+    boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.3)",
+  },
+  rootExpand:{
+    boxShadow: "2px 2px 10px rgba(0, 0, 0, 0.3)",
   },
   media: {
     height: 0,
@@ -16,18 +21,24 @@ export default makeStyles((theme) => ({
     paddingTop: "56.25%", // 16:9
   },
   cardActions: {
-    display: "flex",
-    justifyContent: "flex-end",
+
+
+    
+
+
   },
   cardContent: {
     display: "grid",
     justifyContent: "space-between",
+    
+  
   },
   cardContentExpand: {
     display: "grid",
     justifyContent: "space-between",
     height: "stretch",
     width: "100%",
+    
   },
 
   paper: {

@@ -83,7 +83,7 @@ const App = () => {
           handleDrawerToggle={handleDrawerToggle}
         />
         <Switch>
-          <Route path="/shop">
+          <Route exact path="/">
             <Products
               products={products}
               onAddToCart={handleAddToCart}
